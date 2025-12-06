@@ -1,0 +1,10 @@
+services:
+  ntripcaster:
+    container_name: ntripcaster
+    image: ghcr.io/scorpionsilver/ntripcaster:latest
+    volumes:
+      - ./conf:/ntripcaster/conf
+      - ./logs:/ntripcaster/logs
+    restart: unless-stopped
+    ports:
+      - "2101:2101"   # NTRIP Caster Port
